@@ -45,12 +45,15 @@ def getPost(id):
         for item in floors:
             floor = item.get_text(strip=True)
             textList.append(floor)
-        print('\r(%d/%d)Readed' % (i + 1, pageNum), end='')
+        print()
+        file = open('log', 'w')
+        file.write('\r(%d/%d)Readed' % (i + 1, pageNum))
+        file.close()
 
     # file = open('sunba.html', 'w', encoding='UTF-8')
     # file.write(html)
     # file.close()
-    print()
+    # print()
     return textList
 
 
