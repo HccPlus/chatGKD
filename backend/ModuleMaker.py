@@ -62,7 +62,7 @@ pprint(idList)
 
 for i in range(len(idList)):
     print('getting:', idList[i])
-    jsonStr = dumps(getPost(idList[i]))
+    jsonStr = dumps(getPost(idList[i]), ensure_ascii=False)
     file = open('DataBase.json', 'a')
     file.write(jsonStr)
     file.close()
