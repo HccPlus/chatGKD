@@ -1,0 +1,17 @@
+{
+    "mode":"schedual",
+    "sleep": {
+        "hour": 0,
+        "minute": 0,
+        "second": 1,
+        "times": 4
+    },
+    "schedual": {
+        "year": null,
+        "month": null,
+        "mday": null,
+        "hour": null,
+        "minute": 10,
+        "second": 0
+    }
+}

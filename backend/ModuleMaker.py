@@ -46,7 +46,7 @@ def getPost(id):
         for item in floors:
             floor = item.get_text(strip=True)
             textList.append(floor)
-        print()
+        # print()
         print('\r(%d/%d)Readed' % (i + 1, pageNum), end='')
         sleep(10) # 睡眠10s防止被百度认为访问过于频繁
 
@@ -72,6 +72,6 @@ for i in range(len(idList)):
     file.close()
 
 
-file = open('DataBase.json', 'a')
-file.write(']')
-file.close()
+# file = open('DataBase.json', 'a')
+# file.write(']')
+# file.close()
