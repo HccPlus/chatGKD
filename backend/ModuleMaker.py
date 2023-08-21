@@ -60,9 +60,9 @@ def getPost(id):
 idList = getList(url)
 pprint(idList)
 
-file = open('DataBase.json', 'w')
-file.write('[')
-file.close()
+# file = open('DataBase.json', 'w')
+# file.write('[')
+# file.close()
 
 for i in range(len(idList)):
     print('getting:', idList[i])
