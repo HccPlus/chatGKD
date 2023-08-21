@@ -1,6 +1,7 @@
 
 from requests import get
 from bs4 import BeautifulSoup
+from time import sleep
 from json import dumps
 from pprint import pprint
 
@@ -46,9 +47,8 @@ def getPost(id):
             floor = item.get_text(strip=True)
             textList.append(floor)
         print()
-        file = open('log', 'w')
-        file.write('\r(%d/%d)Readed' % (i + 1, pageNum))
-        file.close()
+        print('\r(%d/%d)Readed' % (i + 1, pageNum), end='')
+        sleep(10) # 睡眠10s防止被百度认为访问过于频繁
 
     # file = open('sunba.html', 'w', encoding='UTF-8')
     # file.write(html)
@@ -60,12 +60,11 @@ def getPost(id):
 idList = getList(url)
 pprint(idList)
 
-dataBase = []
 for i in range(len(idList)):
     print('getting:', idList[i])
-    dataBase.append(getPost(idList[i]))
+    jsonStr = dumps(getPost(idList[i]))
+    file = open('DataBase.json', 'a')
+    file.write(jsonStr)
+    file.close()
 
-jsonStr = dumps(dataBase, ensure_ascii=False)
-file = open('DataBase.json', 'w')
-file.write(jsonStr)
-file.close()
+
